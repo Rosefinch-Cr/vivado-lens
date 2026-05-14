@@ -121,6 +121,10 @@ Design principles:
 
 Place `skill/vivado.md` in your agent's skill directory (e.g. `.claude/commands/`). The skill provides command reference, result schemas, and workflow patterns for automated digital design.
 
+## Examples
+
+[`examples/alu8/`](examples/alu8/) — 8-bit ALU walkthrough. Empty directory → 10/10 simulation pass → timing closure at 100 MHz → 0.089W power, all in 4 minutes. Includes raw Vivado reports + their parsed JSON outputs side-by-side, demonstrating exactly what vivado-lens extracts.
+
 ## Acknowledgments
 
 Architecture informed by [virtuoso-bridge-lite](https://github.com/Arcadia-1/virtuoso-bridge-lite) (analog circuit automation for Cadence Virtuoso). vivado-lens addresses a different domain (digital/FPGA) with a different core focus: report parsing and design feedback rather than remote tool control.

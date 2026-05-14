@@ -37,9 +37,12 @@ progress.json
 xsim.dir/
 .Xil/
 
-# Exception: keep test fixtures
+# Exception: keep test fixtures and example outputs
 !tests/fixtures/*.vcd
 !tests/fixtures/*.log
+!examples/**/outputs/*.vcd
+!examples/**/outputs/*.log
+!examples/**/outputs/*.rpt
 
 # Test artifacts
 .pytest_cache/
