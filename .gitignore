@@ -37,6 +37,10 @@ progress.json
 xsim.dir/
 .Xil/
 
+# Exception: keep test fixtures
+!tests/fixtures/*.vcd
+!tests/fixtures/*.log
+
 # Test artifacts
 .pytest_cache/
 .coverage

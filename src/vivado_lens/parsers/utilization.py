@@ -7,7 +7,7 @@ import re
 from vivado_lens.models.synth import ResourceUsage, Utilization
 
 _RESOURCE_RE = re.compile(
-    r"\|\s*([A-Za-z0-9/ ]+?)\s*\*?\s*\|\s*(\d+)\s*\|\s*\d+\s*\|\s*(\d+)\s*\|\s*([\d.]+)\s*\|"
+    r"\|\s*([A-Za-z0-9/ \-]+?)\s*\*?\s*\|\s*(\d+)\s*\|\s*\d+\s*\|\s*(\d+)\s*\|\s*<?\s*([\d.]+)\s*\|"
 )
 
 _SLICE_LOGIC_NAMES = {

@@ -1,5 +1,6 @@
 ﻿# vivado-lens
 
+[![Tests](https://github.com/Rosefinch-Cr/vivado-lens/actions/workflows/tests.yml/badge.svg)](https://github.com/Rosefinch-Cr/vivado-lens/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![Vivado](https://img.shields.io/badge/Vivado-2017.4+-orange.svg)](https://www.xilinx.com/products/design-tools/vivado.html)
