@@ -48,3 +48,6 @@ xsim.dir/
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Personal / interview prep — not for public repo
+PROJECT_OVERVIEW.md
