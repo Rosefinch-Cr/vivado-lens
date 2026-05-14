@@ -1,12 +1,18 @@
-# vivado-bridge
+﻿# vivado-lens
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![Vivado](https://img.shields.io/badge/Vivado-2017.4+-orange.svg)](https://www.xilinx.com/products/design-tools/vivado.html)
+[![Status](https://img.shields.io/badge/status-alpha-red.svg)]()
+[![Code style](https://img.shields.io/badge/code%20style-pydantic-purple.svg)](https://docs.pydantic.dev/)
 
 Structured design feedback for Vivado — parse, analyze, iterate.
 
-vivado-bridge turns Vivado's opaque batch-mode outputs into structured, machine-readable data. It parses timing reports, utilization tables, power breakdowns, and simulation waveforms into typed models that LLM agents and scripts can consume directly — enabling automated design iteration without GUI interaction.
+vivado-lens turns Vivado's opaque batch-mode outputs into structured, machine-readable data. It parses timing reports, utilization tables, power breakdowns, and simulation waveforms into typed models that LLM agents and scripts can consume directly — enabling automated design iteration without GUI interaction.
 
 ## Why
 
-Vivado produces rich design data, but it's locked behind GUI windows and verbose report files. vivado-bridge extracts that intelligence:
+Vivado produces rich design data, but it's locked behind GUI windows and verbose report files. vivado-lens extracts that intelligence:
 
 - **Timing closure at a glance** — setup/hold/PW slack as numbers, not 500-line reports
 - **Critical path decoded** — source, destination, logic vs route delay split
@@ -20,44 +26,44 @@ All accessible via a single CLI that outputs JSON, rich terminal tables, or one-
 ## Install
 
 ```bash
-cd vivado-bridge
+cd vivado-lens
 pip install -e .
 ```
 
 Requires:
 - Python 3.9+
-- Vivado 2017.4+ (path configured in `src/vivado_bridge/config.py`)
+- Vivado 2017.4+ (path configured in `src/vivado_lens/config.py`)
 - pydantic, click, rich
 
 ## Usage
 
 ```bash
 # Open existing Vivado project
-vivado-bridge open --xpr path/to/project.xpr
+vivado-lens open --xpr path/to/project.xpr
 
 # Initialize new project
-vivado-bridge init --project ./my_design --part xc7a35tcsg324-1 --top top
+vivado-lens init --project ./my_design --part xc7a35tcsg324-1 --top top
 
 # Simulate (returns pass/fail + $display output)
-vivado-bridge sim --project ./my_design
+vivado-lens sim --project ./my_design
 
 # Synthesize (returns timing + utilization)
-vivado-bridge synth --project ./my_design
+vivado-lens synth --project ./my_design
 
 # Implement (returns timing + utilization + power)
-vivado-bridge impl --project ./my_design
+vivado-lens impl --project ./my_design
 
 # Generate bitstream
-vivado-bridge bit --project ./my_design
+vivado-lens bit --project ./my_design
 
 # Read a specific report as structured JSON
-vivado-bridge report --project ./my_design --type timing --stage impl
+vivado-lens report --project ./my_design --type timing --stage impl
 
 # Open Vivado GUI for spatial inspection
-vivado-bridge view --project ./my_design --mode schematic
+vivado-lens view --project ./my_design --mode schematic
 
 # Check progress during long runs
-vivado-bridge status --project ./my_design
+vivado-lens status --project ./my_design
 ```
 
 ## Output Formats
@@ -95,7 +101,7 @@ Example `--format text` output:
 ## Architecture
 
 ```
-src/vivado_bridge/
+src/vivado_lens/
 ├── models/       # Pydantic data models — the structured contract
 ├── parsers/      # Pure functions: report text → typed models (testable without Vivado)
 ├── execution/    # Vivado subprocess management + Tcl script generation
@@ -116,7 +122,7 @@ Place `skill/vivado.md` in your agent's skill directory (e.g. `.claude/commands/
 
 ## Acknowledgments
 
-Architecture informed by [virtuoso-bridge-lite](https://github.com/Arcadia-1/virtuoso-bridge-lite) (analog circuit automation for Cadence Virtuoso). vivado-bridge addresses a different domain (digital/FPGA) with a different core focus: report parsing and design feedback rather than remote tool control.
+Architecture informed by [virtuoso-bridge-lite](https://github.com/Arcadia-1/virtuoso-bridge-lite) (analog circuit automation for Cadence Virtuoso). vivado-lens addresses a different domain (digital/FPGA) with a different core focus: report parsing and design feedback rather than remote tool control.
 
 ## License
 

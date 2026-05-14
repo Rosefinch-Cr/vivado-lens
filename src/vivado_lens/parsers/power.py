@@ -1,10 +1,10 @@
-"""Parse Vivado power.rpt into PowerReport model."""
+﻿"""Parse Vivado power.rpt into PowerReport model."""
 
 from __future__ import annotations
 
 import re
 
-from vivado_bridge.models.impl import PowerComponent, PowerReport
+from vivado_lens.models.impl import PowerComponent, PowerReport
 
 _COMP_RE = re.compile(
     r"\|\s*(Clocks|Slice Logic|Signals|Block RAM|DSPs|I/O|PS7)\s*\|\s*([\d.<]+)\s*\|"

@@ -1,4 +1,4 @@
-"""Simulation result models."""
+﻿"""Simulation result models."""
 
 from __future__ import annotations
 
@@ -6,7 +6,7 @@ from typing import Optional
 
 from pydantic import BaseModel, Field
 
-from vivado_bridge.models.base import VivadoResult
+from vivado_lens.models.base import VivadoResult
 
 
 class SignalTrace(BaseModel):

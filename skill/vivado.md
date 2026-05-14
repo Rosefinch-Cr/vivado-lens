@@ -1,4 +1,4 @@
-# Vivado Bridge — Agent Skill
+﻿# Vivado Bridge — Agent Skill
 
 Agent-native bridge for Xilinx Vivado digital design automation. All commands return structured JSON.
 
@@ -10,14 +10,14 @@ Trigger this skill when the user mentions: Vivado, FPGA, synthesis, implementati
 
 | Intent | Command |
 |--------|---------|
-| Open existing .xpr project | `vivado-bridge open --xpr <path>` |
-| New project from scratch | `vivado-bridge init --project <dir> --part <part> --top <mod>` |
-| Run simulation | `vivado-bridge sim --project <dir>` |
-| Run synthesis | `vivado-bridge synth --project <dir>` |
-| Run implementation | `vivado-bridge impl --project <dir>` |
-| Read parsed report | `vivado-bridge report --project <dir> --type timing\|utilization\|power --stage synth\|impl` |
-| Check running progress | `vivado-bridge status --project <dir>` |
-| Open waveform viewer | `vivado-bridge sim --project <dir> --open-waveform` |
+| Open existing .xpr project | `vivado-lens open --xpr <path>` |
+| New project from scratch | `vivado-lens init --project <dir> --part <part> --top <mod>` |
+| Run simulation | `vivado-lens sim --project <dir>` |
+| Run synthesis | `vivado-lens synth --project <dir>` |
+| Run implementation | `vivado-lens impl --project <dir>` |
+| Read parsed report | `vivado-lens report --project <dir> --type timing\|utilization\|power --stage synth\|impl` |
+| Check running progress | `vivado-lens status --project <dir>` |
+| Open waveform viewer | `vivado-lens sim --project <dir> --open-waveform` |
 
 ## Result Schema
 
@@ -90,7 +90,7 @@ Synthesis takes ~60-90s, implementation ~90-180s for small designs.
 
 **Pattern for agent use:**
 1. Run command in background
-2. Poll progress: `vivado-bridge status --project <dir>`
+2. Poll progress: `vivado-lens status --project <dir>`
 3. Progress JSON: `{"elapsed_s": 45, "phase": "Phase 3 Retarget", "errors": 0, "warnings": 2, "done": false}`
 4. When `"done": true`, read the full result
 
@@ -109,7 +109,7 @@ For spatial information that cannot be represented as text:
 
 ```bash
 # Open waveform in Surfer after simulation
-vivado-bridge sim --project <dir> --open-waveform
+vivado-lens sim --project <dir> --open-waveform
 
 # Open Vivado GUI for schematic/layout/routing (future: view command)
 # Currently: use Vivado GUI manually for device view, schematic, routing
@@ -119,7 +119,7 @@ vivado-bridge sim --project <dir> --open-waveform
 
 - Vivado 2017.4: `D:/vivado/Vivado/2017.4/bin`
 - Surfer: `D:/surfer/surfer.exe`
-- Python 3.9+, installed via `pip install -e C:\Users\Lenovo\Desktop\vivado-bridge`
+- Python 3.9+, installed via `pip install -e C:\Users\Lenovo\Desktop\vivado-lens`
 
 ## Project Directory Structure
 

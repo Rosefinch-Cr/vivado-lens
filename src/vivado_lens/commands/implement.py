@@ -1,19 +1,19 @@
-"""Implementation command: place & route, parse reports."""
+﻿"""Implementation command: place & route, parse reports."""
 
 from __future__ import annotations
 
 import time
 from pathlib import Path
 
-from vivado_bridge.config import VivadoConfig
-from vivado_bridge.execution.local import LocalExecutor
-from vivado_bridge.execution.tcl import TclBuilder
-from vivado_bridge.models.base import CommandStatus
-from vivado_bridge.models.impl import ImplResult
-from vivado_bridge.models.project import ProjectConfig
-from vivado_bridge.parsers.power import parse_power_report
-from vivado_bridge.parsers.timing import parse_timing_report
-from vivado_bridge.parsers.utilization import parse_utilization_report
+from vivado_lens.config import VivadoConfig
+from vivado_lens.execution.local import LocalExecutor
+from vivado_lens.execution.tcl import TclBuilder
+from vivado_lens.models.base import CommandStatus
+from vivado_lens.models.impl import ImplResult
+from vivado_lens.models.project import ProjectConfig
+from vivado_lens.parsers.power import parse_power_report
+from vivado_lens.parsers.timing import parse_timing_report
+from vivado_lens.parsers.utilization import parse_utilization_report
 
 
 def run_impl(project_dir: Path, config: VivadoConfig) -> ImplResult:

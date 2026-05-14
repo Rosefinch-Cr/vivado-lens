@@ -1,11 +1,11 @@
-"""Parse Vivado timing_summary.rpt into TimingSummary model."""
+﻿"""Parse Vivado timing_summary.rpt into TimingSummary model."""
 
 from __future__ import annotations
 
 import re
 from typing import Optional
 
-from vivado_bridge.models.synth import (
+from vivado_lens.models.synth import (
     ClockInfo,
     CriticalPath,
     SlackInfo,

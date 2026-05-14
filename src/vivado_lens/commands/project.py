@@ -1,11 +1,11 @@
-"""Project management commands: open and init."""
+﻿"""Project management commands: open and init."""
 
 from __future__ import annotations
 
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-from vivado_bridge.models.project import ProjectConfig
+from vivado_lens.models.project import ProjectConfig
 
 
 def open_project(xpr_path: Path) -> ProjectConfig:

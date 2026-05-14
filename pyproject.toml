@@ -1,5 +1,5 @@
 [project]
-name = "vivado-bridge"
+name = "vivado-lens"
 version = "0.1.0"
 description = "Structured design feedback for Vivado — parse, analyze, iterate"
 readme = "README.md"
@@ -29,16 +29,16 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Rosefinch-Cr/vivado-bridge"
-Repository = "https://github.com/Rosefinch-Cr/vivado-bridge"
-Issues = "https://github.com/Rosefinch-Cr/vivado-bridge/issues"
+Homepage = "https://github.com/Rosefinch-Cr/vivado-lens"
+Repository = "https://github.com/Rosefinch-Cr/vivado-lens"
+Issues = "https://github.com/Rosefinch-Cr/vivado-lens/issues"
 
 [project.optional-dependencies]
 dev = ["pytest>=7.0", "pytest-cov"]
 
 [project.scripts]
-vivado-bridge = "vivado_bridge.cli:main"
-vb = "vivado_bridge.cli:main"
+vivado-lens = "vivado_lens.cli:main"
+vb = "vivado_lens.cli:main"
 
 [build-system]
 requires = ["setuptools>=68.0"]

@@ -1,4 +1,4 @@
-"""Local executor: runs Vivado tools via subprocess on Windows."""
+﻿"""Local executor: runs Vivado tools via subprocess on Windows."""
 
 from __future__ import annotations
 
@@ -6,9 +6,9 @@ import subprocess
 from pathlib import Path
 from typing import Callable, Optional
 
-from vivado_bridge.config import VivadoConfig
-from vivado_bridge.execution.base import ExecutorBase, RunResult
-from vivado_bridge.execution.process import run_vivado_batch, run_tool
+from vivado_lens.config import VivadoConfig
+from vivado_lens.execution.base import ExecutorBase, RunResult
+from vivado_lens.execution.process import run_vivado_batch, run_tool
 
 
 class LocalExecutor(ExecutorBase):

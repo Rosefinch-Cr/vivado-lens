@@ -1,4 +1,4 @@
-"""View command: launch Vivado GUI for spatial inspection."""
+﻿"""View command: launch Vivado GUI for spatial inspection."""
 
 from __future__ import annotations
 
@@ -6,10 +6,10 @@ import subprocess
 from pathlib import Path
 from typing import Optional
 
-from vivado_bridge.config import VivadoConfig
-from vivado_bridge.execution.tcl import TclBuilder
-from vivado_bridge.models.base import CommandStatus, VivadoResult
-from vivado_bridge.models.project import ProjectConfig
+from vivado_lens.config import VivadoConfig
+from vivado_lens.execution.tcl import TclBuilder
+from vivado_lens.models.base import CommandStatus, VivadoResult
+from vivado_lens.models.project import ProjectConfig
 
 
 def open_view(

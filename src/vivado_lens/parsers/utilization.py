@@ -1,10 +1,10 @@
-"""Parse Vivado utilization.rpt into Utilization model."""
+﻿"""Parse Vivado utilization.rpt into Utilization model."""
 
 from __future__ import annotations
 
 import re
 
-from vivado_bridge.models.synth import ResourceUsage, Utilization
+from vivado_lens.models.synth import ResourceUsage, Utilization
 
 _RESOURCE_RE = re.compile(
     r"\|\s*([A-Za-z0-9/ ]+?)\s*\*?\s*\|\s*(\d+)\s*\|\s*\d+\s*\|\s*(\d+)\s*\|\s*([\d.]+)\s*\|"

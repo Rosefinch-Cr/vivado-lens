@@ -1,4 +1,4 @@
-"""CLI entry point for vivado-bridge."""
+﻿"""CLI entry point for vivado-lens."""
 
 from __future__ import annotations
 
@@ -7,7 +7,7 @@ from pathlib import Path
 
 import click
 
-from vivado_bridge import __version__
+from vivado_lens import __version__
 
 
 def _output(result, fmt: str) -> None:
@@ -117,7 +117,7 @@ def _output_rich(result) -> None:
 @click.group()
 @click.version_option(__version__)
 def main():
-    """vivado-bridge: Agent-native Vivado automation."""
+    """vivado-lens: Agent-native Vivado automation."""
     pass
 
 
@@ -139,7 +139,7 @@ def status(project: str):
 @click.option("--format", "fmt", default="json", type=click.Choice(["json", "summary", "text"]))
 def cmd_open(xpr: str, fmt: str):
     """Open an existing Vivado .xpr project."""
-    from vivado_bridge.client import VivadoBridge
+    from vivado_lens.client import VivadoBridge
 
     bridge = VivadoBridge.local()
     cfg = bridge.open_project(Path(xpr))
@@ -156,7 +156,7 @@ def cmd_open(xpr: str, fmt: str):
 @click.option("--format", "fmt", default="json", type=click.Choice(["json", "summary", "text"]))
 def init(project: str, part: str, top: str, fmt: str):
     """Initialize a new project."""
-    from vivado_bridge.client import VivadoBridge
+    from vivado_lens.client import VivadoBridge
 
     bridge = VivadoBridge.local()
     cfg = bridge.init_project(Path(project), part, top)
@@ -176,8 +176,8 @@ def init(project: str, part: str, top: str, fmt: str):
 def sim(project: str, tb_top: str, sim_time: str, parse_waveform: bool, open_waveform: bool, fmt: str):
     """Run simulation."""
     import subprocess
-    from vivado_bridge.client import VivadoBridge
-    from vivado_bridge.config import VivadoConfig
+    from vivado_lens.client import VivadoBridge
+    from vivado_lens.config import VivadoConfig
 
     bridge = VivadoBridge.local()
     result = bridge.simulate(Path(project), tb_top, sim_time, parse_waveform)
@@ -194,7 +194,7 @@ def sim(project: str, tb_top: str, sim_time: str, parse_waveform: bool, open_wav
 @click.option("--format", "fmt", default="json", type=click.Choice(["json", "summary", "text"]))
 def synth(project: str, fmt: str):
     """Run synthesis."""
-    from vivado_bridge.client import VivadoBridge
+    from vivado_lens.client import VivadoBridge
 
     bridge = VivadoBridge.local()
     result = bridge.synthesize(Path(project))
@@ -206,7 +206,7 @@ def synth(project: str, fmt: str):
 @click.option("--format", "fmt", default="json", type=click.Choice(["json", "summary", "text"]))
 def impl(project: str, fmt: str):
     """Run implementation."""
-    from vivado_bridge.client import VivadoBridge
+    from vivado_lens.client import VivadoBridge
 
     bridge = VivadoBridge.local()
     result = bridge.implement(Path(project))
@@ -218,7 +218,7 @@ def impl(project: str, fmt: str):
 @click.option("--format", "fmt", default="json", type=click.Choice(["json", "summary", "text"]))
 def bit(project: str, fmt: str):
     """Generate bitstream."""
-    from vivado_bridge.client import VivadoBridge
+    from vivado_lens.client import VivadoBridge
 
     bridge = VivadoBridge.local()
     result = bridge.bitstream(Path(project))
@@ -235,7 +235,7 @@ def bit(project: str, fmt: str):
 @click.option("--format", "fmt", default="json", type=click.Choice(["json", "summary", "text"]))
 def view(project: str, mode: str, stage: str, highlight: str, fmt: str):
     """Open Vivado GUI with a specific view."""
-    from vivado_bridge.client import VivadoBridge
+    from vivado_lens.client import VivadoBridge
 
     bridge = VivadoBridge.local()
     result = bridge.view(Path(project), mode, stage, highlight)
@@ -249,9 +249,9 @@ def view(project: str, mode: str, stage: str, highlight: str, fmt: str):
 @click.option("--format", "fmt", default="json", type=click.Choice(["json", "text"]))
 def report(project: str, rtype: str, stage: str, fmt: str):
     """Read and parse a report."""
-    from vivado_bridge.parsers.timing import parse_timing_report
-    from vivado_bridge.parsers.utilization import parse_utilization_report
-    from vivado_bridge.parsers.power import parse_power_report
+    from vivado_lens.parsers.timing import parse_timing_report
+    from vivado_lens.parsers.utilization import parse_utilization_report
+    from vivado_lens.parsers.power import parse_power_report
 
     project_dir = Path(project)
     if rtype == "timing":

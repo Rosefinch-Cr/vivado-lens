@@ -1,11 +1,11 @@
-"""Parse VCD (Value Change Dump) files into WaveformData model."""
+﻿"""Parse VCD (Value Change Dump) files into WaveformData model."""
 
 from __future__ import annotations
 
 from pathlib import Path
 from typing import Optional
 
-from vivado_bridge.models.sim import SignalTrace, WaveformData
+from vivado_lens.models.sim import SignalTrace, WaveformData
 
 
 def parse_vcd(vcd_path: str | Path, signal_filter: Optional[list[str]] = None) -> WaveformData:

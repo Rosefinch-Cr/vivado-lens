@@ -1,4 +1,4 @@
-"""Simulation command: compile, elaborate, simulate, parse results."""
+﻿"""Simulation command: compile, elaborate, simulate, parse results."""
 
 from __future__ import annotations
 
@@ -6,14 +6,14 @@ import time
 from pathlib import Path
 from typing import Optional
 
-from vivado_bridge.config import VivadoConfig
-from vivado_bridge.execution.local import LocalExecutor
-from vivado_bridge.execution.tcl import TclBuilder
-from vivado_bridge.models.base import CommandStatus
-from vivado_bridge.models.project import ProjectConfig
-from vivado_bridge.models.sim import SimResult
-from vivado_bridge.parsers.log import extract_display_output
-from vivado_bridge.parsers.vcd import parse_vcd
+from vivado_lens.config import VivadoConfig
+from vivado_lens.execution.local import LocalExecutor
+from vivado_lens.execution.tcl import TclBuilder
+from vivado_lens.models.base import CommandStatus
+from vivado_lens.models.project import ProjectConfig
+from vivado_lens.models.sim import SimResult
+from vivado_lens.parsers.log import extract_display_output
+from vivado_lens.parsers.vcd import parse_vcd
 
 
 def run_sim(

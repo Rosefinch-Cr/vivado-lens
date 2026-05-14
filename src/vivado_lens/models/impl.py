@@ -1,4 +1,4 @@
-"""Implementation result models."""
+﻿"""Implementation result models."""
 
 from __future__ import annotations
 
@@ -6,8 +6,8 @@ from typing import Optional
 
 from pydantic import BaseModel, Field
 
-from vivado_bridge.models.base import VivadoResult
-from vivado_bridge.models.synth import TimingSummary, Utilization
+from vivado_lens.models.base import VivadoResult
+from vivado_lens.models.synth import TimingSummary, Utilization
 
 
 class PowerComponent(BaseModel):

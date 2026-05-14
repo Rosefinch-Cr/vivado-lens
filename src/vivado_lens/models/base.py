@@ -1,4 +1,4 @@
-"""Base result type for all vivado-bridge operations."""
+﻿"""Base result type for all vivado-lens operations."""
 
 from __future__ import annotations
 
@@ -16,7 +16,7 @@ class CommandStatus(str, Enum):
 
 
 class VivadoResult(BaseModel):
-    """Base result returned by every vivado-bridge command."""
+    """Base result returned by every vivado-lens command."""
 
     status: CommandStatus
     command: str

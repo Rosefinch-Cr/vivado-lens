@@ -1,4 +1,4 @@
-"""Vivado process runner with streaming output and progress tracking."""
+﻿"""Vivado process runner with streaming output and progress tracking."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ import time
 from pathlib import Path
 from typing import Callable, Optional
 
-from vivado_bridge.models.progress import ProgressUpdate
+from vivado_lens.models.progress import ProgressUpdate
 
 _PHASE_RE = re.compile(r"(Phase \d+|Starting|Finished|WARNING|ERROR|CRITICAL)", re.IGNORECASE)
 

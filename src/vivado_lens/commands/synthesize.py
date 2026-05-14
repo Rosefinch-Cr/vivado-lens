@@ -1,18 +1,18 @@
-"""Synthesis command: generate Tcl, run Vivado, parse reports."""
+﻿"""Synthesis command: generate Tcl, run Vivado, parse reports."""
 
 from __future__ import annotations
 
 import time
 from pathlib import Path
 
-from vivado_bridge.config import VivadoConfig
-from vivado_bridge.execution.local import LocalExecutor
-from vivado_bridge.execution.tcl import TclBuilder
-from vivado_bridge.models.base import CommandStatus
-from vivado_bridge.models.project import ProjectConfig
-from vivado_bridge.models.synth import SynthResult
-from vivado_bridge.parsers.timing import parse_timing_report
-from vivado_bridge.parsers.utilization import parse_utilization_report
+from vivado_lens.config import VivadoConfig
+from vivado_lens.execution.local import LocalExecutor
+from vivado_lens.execution.tcl import TclBuilder
+from vivado_lens.models.base import CommandStatus
+from vivado_lens.models.project import ProjectConfig
+from vivado_lens.models.synth import SynthResult
+from vivado_lens.parsers.timing import parse_timing_report
+from vivado_lens.parsers.utilization import parse_utilization_report
 
 
 def run_synth(project_dir: Path, config: VivadoConfig) -> SynthResult:
